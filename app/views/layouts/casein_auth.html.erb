@@ -6,14 +6,20 @@
 
     <title>Welcome to <%= casein_config_website_name %></title>
     <%= stylesheet_link_tag "casein/login" %>
-	<%= javascript_include_tag "casein/casein" %>
-	<%= csrf_meta_tag %>
+    <%= javascript_include_tag "casein/casein" %>
+    <%= csrf_meta_tag %>
 
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <% casein_config_stylesheet_includes.each do |stylesheet| %>
+      <%= stylesheet_link_tag(stylesheet) %>
+    <% end %>
+    <% casein_config_javascript_includes.each do |javascript| %>
+      <%= javascript_include_tag(javascript) %>
+    <% end %>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <%= javascript_include_tag("casein/html5shiv") %>
     <![endif]-->
-
   </head>
 
   <body>

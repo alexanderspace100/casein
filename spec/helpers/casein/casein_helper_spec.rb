@@ -7,13 +7,6 @@ describe Casein::CaseinHelper, type: :helper do
     allow(subject).to receive("link_to").and_return("LINK_TO")
   end
 
-  describe '#casein_get_footer_string' do
-    it "builds a form field" do
-      expect(helper.casein_get_footer_string false).to include "Running on"
-      expect(helper.casein_get_footer_string false).to have_link "Casein", href: 'http://www.caseincms.com'
-    end
-  end
-
   describe "#casein_get_version_info" do
     it "returns the correct version info" do
       expect(helper.casein_get_version_info)

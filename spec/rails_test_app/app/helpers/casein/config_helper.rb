@@ -11,6 +11,10 @@ module Casein
       'casein/casein.png'
     end
 
+    def casein_config_footer_string
+      'Casein'
+    end
+
     # The server hostname where Casein will run
     def casein_config_hostname
       if Rails.env.production?
